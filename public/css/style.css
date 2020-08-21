@@ -1,0 +1,193 @@
+/* Classes outils */
+
+.d-flex{
+    display: flex;
+}
+
+.mw-50{
+    max-width: 50vw;
+}
+
+.mw-icon{
+    max-width: 8.5vw;
+    margin-right: 10px;
+}
+
+.mt-30{
+    margin-top: 20px;
+}
+
+.row-center{
+    display: flex;
+    flex-direction: row;                            /* puts username next to usersymbol*/
+    align-items: center;                            /* Name neatly in centre of row next to symbol */
+}
+
+/*Generals rules*/
+
+*{
+    box-sizing:border-box;
+}
+
+html {
+    font-size: 2.6vw;
+}
+
+h1{
+    font-size: 2.1em;
+    align-self: flex-start;                 /* places h1 at "top-left" */
+}
+
+h2{
+    font-size: 1.8em;
+    align-self: flex-start;                 /* places h2 at "top-left" */
+}
+
+h3{
+    font-size: 1.5em;
+    margin: 0.8vw;
+}
+
+/*Body*/
+
+body{
+    padding: 5px;                           /* space on the edges*/
+    width:95%;
+    margin:auto;
+    font-family: sans-serif, Arial;
+}
+
+/*Header*/
+
+header,section {
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+ /*   max-width: 90%; */
+    margin:20px;
+    padding-bottom: 1em;
+    border-bottom: 0.1em solid black;
+}
+
+/*Presentation*/
+
+#presentation, #acteurs_partners{
+    text-align: justify;
+    text-justify: auto;
+}
+
+/*Partners and acteurs*/
+
+#acteurs_partners>div, #acteurs_partners article{
+
+    padding-bottom: 1em;
+    border: 0.1em solid black;
+    margin-left: 2vw;
+    margin-right: 2vw;
+    margin-top: 2vw;
+    margin-bottom: 1vw;
+}
+
+.h-text{   /* HIDDEN-TEXT */
+/*  align-self: flex-start; */                      /* aligns text to cross-axis(row start) = to left NOT NEEDED */
+    white-space: nowrap;                            /* prevents wrap = 1 line */
+    overflow: hidden;                               /* hides wrapped text */
+    text-overflow: ellipsis;                        /* shows ellipsis at end */
+    word-break: break-all;                          /* ensures break in word */
+/*  border: 1px solid #000000;*/                    /* used FOR TESTING*/
+    width: 95%;                                    /* limits size of text to display (smaller than container=80vw) */
+    margin-top: 1vw;
+    margin-bottom: 2.5vw;
+    margin-left: 0.8vw;
+}
+
+.logo_acteurs
+{
+    max-height: 15vw;                               /*sizes ACTEURS' logos   use vh to avoid "bumping" */
+    max-width: 60%; 
+    margin: 0.8vw;
+    border-radius: 10px;                            /* rounded corners */
+}
+
+/*Forms*/
+
+
+
+/* ================== FOOTER ELEMENTS ================ */
+
+footer
+{
+    max-width:90vw;                                 /* full viewport width */
+    height: auto;
+    display: flex;
+    flex-direction: row;                            /* puts footer elements in a row*/
+    justify-content: center;                        /* centers footer elements along the row*/
+    align-items: center;                            /* cross-axis centre (not needed 1 row only)*/
+    padding-bottom: 1vw;
+    padding-top: 1vw;
+}
+
+nav ul
+{
+    list-style-type: none;                          /* removes bullets */
+    display: flex;                                  /* displays in default=row */
+}
+
+nav li
+{
+    margin-right: 1vw;                              /* space between elements */
+}
+
+/* =======================  BOUTONS ===================== */
+
+.button                                       /*scale in em = scale to the letters inside=font*/
+{
+    background-color: #ec442d;                      /*#2564c9 = alt*/
+    border-radius: 14px;                            /* rounded corners */
+
+    color: #ffffff;                                 /* text color*/
+    text-align: center;
+    text-decoration: none;
+
+    padding: 0.35em 0.8em 0.35em 0.8em;             /* top, right, bottom, left */
+    margin: 0.5em; 
+}
+
+/* =======================  RESPONSIVE ===================== */
+
+
+@media screen and (min-width: 576px) {
+    html{
+        font-size: 2vw;
+    }
+
+    header{
+        flex-direction: row;                      
+        justify-content: space-around;
+        align-items: flex-start;
+    }                 
+    .button{
+        align-self: flex-end;
+    }
+    .row-center{
+        order: 2;
+    }
+}
+
+@media screen and (min-width: 768px) {
+      body{
+        font-size: 105%;
+    }
+}
+
+@media screen and (min-width: 992px) {
+      body{
+        font-size: 110%;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+      body{
+        font-size: 115%;
+    }
+}
